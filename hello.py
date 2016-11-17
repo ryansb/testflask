@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from flask import Flask, render_template, render_json
+from flask import Flask, render_template, jsonify
 
 app = Flask('hello-flask')
 
@@ -9,7 +9,7 @@ def index():
 
 @app.route('/test')
 def test():
-    return render_json({'hello': 'world'})
+    return jsonify({'hello': 'world'})
 
 if __name__ == '__main__':
     app.run('localhost')
