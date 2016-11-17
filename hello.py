@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
-from flask import Flask, render_template
+from flask import Flask, render_template, render_json
 
 app = Flask('hello-flask')
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/test')
+def test():
+    return render_json({'hello': 'world'})
 
 if __name__ == '__main__':
     app.run('localhost')
